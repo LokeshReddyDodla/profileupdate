@@ -26,7 +26,12 @@ async function request(path, options = {}) {
   const data = await res.json();
 
   if (!res.ok) {
-    throw new Error(data.message || data.detail || `HTTP ${res.status}`);
+    const msg = typeof data.message === "string"
+      ? data.message
+      : typeof data.detail === "string"
+        ? data.detail
+        : JSON.stringify(data.detail || data.message || data);
+    throw new Error(msg || `HTTP ${res.status}`);
   }
   return data;
 }
