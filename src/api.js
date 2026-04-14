@@ -51,6 +51,25 @@ export async function verifyOtp(phone_number, otp) {
   return res;
 }
 
+// Patient Onboarding Agent
+export async function startOnboarding(restart = false) {
+  return request("/patient-onboarding-agent/start", {
+    method: "POST",
+    body: JSON.stringify({ restart }),
+  });
+}
+
+export async function chatWithOnboarding(message) {
+  return request("/patient-onboarding-agent/chat", {
+    method: "POST",
+    body: JSON.stringify({ message }),
+  });
+}
+
+export async function getOnboardingSession() {
+  return request("/patient-onboarding-agent/session");
+}
+
 // Profile Update Agent
 export async function chatWithAgent(message) {
   return request("/profile-update-agent/chat", {

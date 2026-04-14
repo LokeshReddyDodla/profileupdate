@@ -8,6 +8,7 @@ export default defineConfig({
     proxy: {
       "/v1": "http://localhost:8000",
       "/profile-update-agent": "http://localhost:8000",
+      "/patient-onboarding-agent": "http://localhost:8000",
       "/patient": "http://localhost:8000",
     },
   },
