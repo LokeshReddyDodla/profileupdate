@@ -6,10 +6,10 @@ export default defineConfig({
   server: {
     port: 3000,
     proxy: {
-      "/v1": "http://localhost:8000",
-      "/profile-update-agent": "http://localhost:8000",
-      "/patient-onboarding-agent": "http://localhost:8000",
-      "/patient": "http://localhost:8000",
+      "/v1": "https://api.aihealth.clinic",
+      "/profile-update-agent": "https://api.aihealth.clinic",
+      "/patient-onboarding-agent": "https://api.aihealth.clinic",
+      "/patient": "https://api.aihealth.clinic",
     },
   },
 });

@@ -1,4 +1,4 @@
-const BASE = "";
+const BASE = "https://api.aihealth.clinic";
 
 export function getToken() {
   return localStorage.getItem("token");
