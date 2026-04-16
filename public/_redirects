@@ -1,0 +1,4 @@
+/v1/* https://api.aihealth.clinic/v1/:splat 200
+/patient-onboarding-agent/* https://api.aihealth.clinic/patient-onboarding-agent/:splat 200
+/profile-update-agent/* https://api.aihealth.clinic/profile-update-agent/:splat 200
+/patient/* https://api.aihealth.clinic/patient/:splat 200
