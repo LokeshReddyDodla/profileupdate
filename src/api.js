@@ -17,8 +17,17 @@ export function isLoggedIn() {
   return !!getToken();
 }
 
+function getDeviceId() {
+  let id = localStorage.getItem("device_id");
+  if (!id) {
+    id = crypto.randomUUID();
+    localStorage.setItem("device_id", id);
+  }
+  return id;
+}
+
 async function request(path, options = {}) {
-  const headers = { "Content-Type": "application/json", ...options.headers };
+  const headers = { "Content-Type": "application/json", "x-device-id": getDeviceId(), ...options.headers };
   const token = getToken();
   if (token) headers["Authorization"] = `Bearer ${token}`;
 
