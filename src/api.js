@@ -11,6 +11,7 @@ export function setToken(token) {
 export function clearToken() {
   localStorage.removeItem("token");
   localStorage.removeItem("user_id");
+  localStorage.removeItem("device_id");
 }
 
 export function isLoggedIn() {
@@ -61,6 +62,7 @@ export async function verifyOtp(phone_number, otp) {
   if (res.data?.token) {
     setToken(res.data.token);
     localStorage.setItem("user_id", res.data.user_id);
+    if (res.data.device_id) localStorage.setItem("device_id", res.data.device_id);
   }
   return res;
 }
