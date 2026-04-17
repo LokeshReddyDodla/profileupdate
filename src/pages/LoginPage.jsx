@@ -2,7 +2,7 @@ import { useState } from "react";
 import { sendOtp, verifyOtp } from "../api";
 
 export default function LoginPage({ onLogin }) {
-  const [phone, setPhone] = useState("");
+  const [phone, setPhone] = useState("91");
   const [otp, setOtp] = useState("");
   const [otpSent, setOtpSent] = useState(false);
   const [loading, setLoading] = useState(false);
